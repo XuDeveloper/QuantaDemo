@@ -50,4 +50,18 @@ public class MainActivity extends Activity {
         super.onDestroy();
         Log.i(TAG, "onDestroy");
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "onSaveInstanceState");
+        outState.putString("MainActivity_save_test", "test");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String test = savedInstanceState.getString("MainActivity_save_test");
+        Log.i(TAG, "restore test:" + test);
+    }
 }

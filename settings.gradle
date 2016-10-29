@@ -1,1 +1,1 @@
-include ':demo1', ':demo2'
+include ':activityDemo1', ':activityDemo2'
